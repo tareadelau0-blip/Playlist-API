@@ -1,66 +1,63 @@
 import streamlit as st
 import os
 import re
+import requests
+import base64
 from googleapiclient.discovery import build
-from dotenv import load_dotenv
 
-# Configuración de página estilo "Dark Mode" Profesional
-st.set_page_config(page_title="YouTube Playlist Manager", page_icon="🎵", layout="wide")
+# --- CONFIGURACIÓN DE SEGURIDAD ---
+# Estos valores se configuran en el panel de Streamlit Cloud (Secrets)
+API_KEY = st.secrets["YOUTUBE_API_KEY"]
+GITHUB_TOKEN = st.secrets["GH_TOKEN"]
+REPO_NAME = "tareadelau0-blip/Playlist-API"
+PASSWORD_APP = st.secrets["APP_PASSWORD"]
 
-load_dotenv()
-API_KEY = os.getenv("YOUTUBE_API_KEY")
+st.set_page_config(page_title="Music Manager Pro", page_icon="🎬", layout="wide")
 
-def extraer_id(url):
-    match = re.search(r"list=([a-zA-Z0-9_-]+)", url)
-    return match.group(1) if match else url
+# --- LOGIN SIMPLE ---
+st.sidebar.title("🔐 Acceso")
+password = st.sidebar.text_input("Contraseña de Administrador", type="password")
 
-def obtener_nombres(playlist_id):
-    if not API_KEY: return ["Error: Configura tu API_KEY"]
-    youtube = build('youtube', 'v3', developerKey=API_KEY)
-    canciones = []
-    try:
-        request = youtube.playlistItems().list(
-            part="snippet", playlistId=playlist_id, maxResults=50
-        )
-        response = request.execute()
-        for item in response['items']:
-            title = item['snippet']['title']
-            clean = title.split(' (')[0].split(' [')[0].replace('Lyrics', '').strip()
-            canciones.append(clean)
-        return canciones
-    except Exception as e:
-        return [f"Error: {str(e)}"]
+if password != PASSWORD_APP:
+    st.warning("Por favor, introduce la contraseña en el menú lateral para gestionar las listas.")
+    st.stop() # Detiene la app si la clave es incorrecta
+
+# --- FUNCIONES DE GITHUB API ---
+def actualizar_listas_en_github(nuevo_enlace):
+    url = f"https://api.github.com/repos/{REPO_NAME}/contents/listas.txt"
+    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+    
+    # 1. Obtener el archivo actual (necesitamos el 'sha')
+    r = requests.get(url, headers=headers)
+    if r.status_code == 200:
+        data = r.json()
+        contenido_actual = base64.b64decode(data['content']).decode('utf-8')
+        sha = data['sha']
+        nuevo_contenido = contenido_actual + f"\n{nuevo_enlace}"
+    else:
+        nuevo_contenido = nuevo_enlace
+        sha = None
+
+    # 2. Subir el cambio
+    payload = {
+        "message": "Update listas.txt via Streamlit",
+        "content": base64.b64encode(nuevo_contenido.encode('utf-8')).decode('utf-8'),
+        "sha": sha if sha else ""
+    }
+    
+    res = requests.put(url, headers=headers, json=payload)
+    return res.status_code == 200
 
 # --- INTERFAZ ---
-st.title("🎵 Gestor de Inventario Musical")
-st.markdown("---")
+st.title("🎵 Panel de Control - Playlist API")
+enlace = st.text_input("Pega el link de la Playlist:")
 
-col1, col2 = st.columns([2, 1])
-
-with col1:
-    st.subheader("Agregar Nueva Lista")
-    url_input = st.text_input("Pega el enlace de la Playlist aquí:", placeholder="https://www.youtube.com/playlist?list=...")
-    
-    if st.button("Procesar y Ver Canciones"):
-        if url_input:
-            p_id = extraer_id(url_input)
-            with st.spinner("Consultando API de YouTube..."):
-                lista_nombres = obtener_nombres(p_id)
-                st.session_state['temp_list'] = lista_nombres
-                st.success(f"Se encontraron {len(lista_nombres)} canciones.")
+if st.button("🚀 Agregar al Inventario"):
+    if "list=" in enlace:
+        if actualizar_listas_en_github(enlace):
+            st.success("✅ ¡Enlace guardado en GitHub! Actions lo procesará pronto.")
+            st.balloons()
         else:
-            st.warning("Por favor, pega un enlace válido.")
-
-with col2:
-    st.subheader("Vista Previa")
-    if 'temp_list' in st.session_state:
-        # Mostramos los datos en una tabla tipo Excel (como te gusta)
-        st.table(st.session_state['temp_list'])
-
-# Botón para guardar en el archivo del repo
-if st.button("🚀 Confirmar y Guardar en listas.txt"):
-    if url_input:
-        with open("listas.txt", "a") as f:
-            f.write(f"\n{url_input}")
-        st.balloons()
-        st.info("Enlace añadido a listas.txt. El proceso de GitHub Actions lo procesará pronto.")
+            st.error("❌ Error al conectar con la API de GitHub.")
+    else:
+        st.error("El enlace no parece ser una Playlist válida.")
