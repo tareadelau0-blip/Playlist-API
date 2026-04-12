@@ -51,7 +51,7 @@ st.markdown("""
         background-color: #161b22;
     }
     </style>
-    """, unsafe_allow_stdio=True)
+    """, unsafe_allow_html=True)
 
 # --- LOGIN ---
 with st.sidebar:
