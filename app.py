@@ -58,8 +58,8 @@ with st.sidebar:
     st.markdown("### 🔐 Autenticación")
     password = st.text_input("Ingresar Token de Acceso", type="password")
     st.divider()
-    st.caption("Music Manager v3.0")
-    st.caption("Ref: Audit & Systems Div.")
+    st.caption("Music Playlist v1.0")
+    st.caption("Ref: System of Music List.")
 
 if password != PASSWORD_APP:
     st.warning("🔒 Acceso restringido. Introduzca credenciales.")
@@ -150,4 +150,4 @@ with c2:
             st.error("Error en última ejecución")
 
 st.markdown("<br><br>", unsafe_allow_html=True)
-st.caption("Narciso Andres Pozo Marroquin © 2026 | Accounting Systems & Cloud Automation")
+st.caption("Crtiss Leejs Pedons Hermaosz © 2026 | Clouding Music Automation")
