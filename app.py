@@ -2,6 +2,9 @@ import streamlit as st
 import requests
 import base64
 import time
+import datetime
+
+url = f"https://api.github.com/repos/{REPO_NAME}/actions/runs?per_page=1&t={datetime.datetime.now().timestamp()}"
 
 # --- CONFIGURACIÓN DE SEGURIDAD ---
 try:
@@ -58,8 +61,11 @@ def disparar_sync_github():
     return res.status_code == 204
 
 def obtener_estado_github():
-    """Consulta el estado del último proceso en GitHub"""
-    url = f"https://api.github.com/repos/{REPO_NAME}/actions/runs?per_page=1"
+    """Consulta el estado del último proceso en GitHub con timestamp para evitar caché"""
+    # Se genera dentro para que sea distinto en cada clic
+    ts = datetime.datetime.now().timestamp()
+    url = f"https://api.github.com/repos/{REPO_NAME}/actions/runs?per_page=1&t={ts}"
+    
     headers = {"Authorization": f"token {GITHUB_TOKEN}", "Accept": "application/vnd.github.v3+json"}
     try:
         r = requests.get(url, headers=headers)
