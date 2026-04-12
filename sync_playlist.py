@@ -30,8 +30,10 @@ def sync_playlist():
 
         for item in response['items']:
             title = item['snippet']['title']
-            # Limpieza básica de títulos
-            clean_title = title.split(' (')[0].split(' [')[0].strip()
+            # Limpieza en cadena: quita paréntesis, corchetes y palabras clave
+            clean_title = title.split(' (')[0].split(' [')[0]
+            clean_title = clean_title.replace('Lyrics', '').replace('Official Video', '').replace('Video Oficial', '').strip()
+            
             canciones.append(clean_title)
 
         next_page_token = response.get('nextPageToken')
