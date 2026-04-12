@@ -26,7 +26,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add nombres_musica.txt
-          # El comando || exit 0 evita que falle si no hay canciones nuevas
-          git commit -m "Auto-update playlist names" || exit 0
+          # Agregamos toda la carpeta de Playlists
+          git add Mis_Playlists/*.txt
+          git commit -m "Sync playlists folders" || exit 0
           git push
