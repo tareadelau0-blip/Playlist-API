@@ -4,9 +4,8 @@ import base64
 import time
 import datetime
 
-url = f"https://api.github.com/repos/{REPO_NAME}/actions/runs?per_page=1&t={datetime.datetime.now().timestamp()}"
-
 # --- CONFIGURACIÓN DE SEGURIDAD ---
+# Primero definimos las variables, LUEGO las usamos
 try:
     API_KEY = st.secrets["YOUTUBE_API_KEY"]
     GITHUB_TOKEN = st.secrets["GH_TOKEN"]
@@ -29,7 +28,6 @@ if password != PASSWORD_APP:
 # --- FUNCIONES DE GITHUB API ---
 
 def actualizar_listas_en_github(nuevo_enlace):
-    """Agrega un nuevo link al archivo listas.txt"""
     url = f"https://api.github.com/repos/{REPO_NAME}/contents/listas.txt"
     headers = {"Authorization": f"token {GITHUB_TOKEN}", "Accept": "application/vnd.github.v3+json"}
     
@@ -54,18 +52,16 @@ def actualizar_listas_en_github(nuevo_enlace):
     return res.status_code in [200, 201]
 
 def disparar_sync_github():
-    """Ejecuta el Workflow de GitHub Actions"""
     url = f"https://api.github.com/repos/{REPO_NAME}/actions/workflows/update.yml/dispatches"
     headers = {"Authorization": f"token {GITHUB_TOKEN}", "Accept": "application/vnd.github.v3+json"}
     res = requests.post(url, headers=headers, json={"ref": "main"})
     return res.status_code == 204
 
 def obtener_estado_github():
-    """Consulta el estado del último proceso en GitHub con timestamp para evitar caché"""
-    # Se genera dentro para que sea distinto en cada clic
+    """Consulta el estado real con un timestamp para saltar la caché"""
     ts = datetime.datetime.now().timestamp()
+    # Aquí es donde usamos REPO_NAME, ahora que ya existe
     url = f"https://api.github.com/repos/{REPO_NAME}/actions/runs?per_page=1&t={ts}"
-    
     headers = {"Authorization": f"token {GITHUB_TOKEN}", "Accept": "application/vnd.github.v3+json"}
     try:
         r = requests.get(url, headers=headers)
@@ -105,12 +101,11 @@ with col2:
     if st.button("🔄 Sincronizar Canciones Ahora"):
         if disparar_sync_github():
             st.toast("Petición enviada...")
-            time.sleep(1) # Tiempo para que GitHub registre el inicio
+            time.sleep(2) # Pausa breve para que GitHub registre el inicio
             st.rerun()
     
     st.write("---")
     
-    # Monitor de Estado en Tiempo Real
     status, conclusion = obtener_estado_github()
     
     if status in ["in_progress", "queued", "requested"]:
