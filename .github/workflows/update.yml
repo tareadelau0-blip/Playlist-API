@@ -1,18 +1,20 @@
 name: Sync YouTube Playlist
 on:
   schedule:
-    - cron: '0 0 * * *' # Se ejecuta diario a medianoche
-  workflow_dispatch: # Permite ejecutarlo manualmente con un botón
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   update-list:
     runs-on: ubuntu-latest
+    permissions: # Añadimos esto para asegurar el permiso de escritura
+      contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4 # Actualizado a v4
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5 # Actualizado a v5
         with:
-          python-version: '3.9'
+          python-version: '3.11'
       - name: Install dependencies
         run: pip install google-api-python-client python-dotenv
       - name: Run script
@@ -25,5 +27,6 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add nombres_musica.txt
+          # El comando || exit 0 evita que falle si no hay canciones nuevas
           git commit -m "Auto-update playlist names" || exit 0
           git push
