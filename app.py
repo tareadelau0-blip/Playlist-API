@@ -1,19 +1,16 @@
 import streamlit as st
-import os
-import re
 import requests
 import base64
-from googleapiclient.discovery import build
+import time
 
 # --- CONFIGURACIÓN DE SEGURIDAD ---
-# Los valores se toman de Settings > Secrets en Streamlit Cloud
 try:
     API_KEY = st.secrets["YOUTUBE_API_KEY"]
     GITHUB_TOKEN = st.secrets["GH_TOKEN"]
     REPO_NAME = "tareadelau0-blip/Playlist-API"
     PASSWORD_APP = st.secrets["APP_PASSWORD"]
 except KeyError as e:
-    st.error(f"Falta la configuración de Secret: {e}")
+    st.error(f"Falta la configuración de Secret en Streamlit Cloud: {e}")
     st.stop()
 
 st.set_page_config(page_title="Music Manager Pro", page_icon="🎬", layout="wide")
@@ -29,17 +26,15 @@ if password != PASSWORD_APP:
 # --- FUNCIONES DE GITHUB API ---
 
 def actualizar_listas_en_github(nuevo_enlace):
-    """Agrega un nuevo link al archivo listas.txt en el repositorio"""
+    """Agrega un nuevo link al archivo listas.txt"""
     url = f"https://api.github.com/repos/{REPO_NAME}/contents/listas.txt"
     headers = {"Authorization": f"token {GITHUB_TOKEN}", "Accept": "application/vnd.github.v3+json"}
     
-    # 1. Obtener el archivo actual (necesitamos el 'sha')
     r = requests.get(url, headers=headers)
     if r.status_code == 200:
         data = r.json()
         contenido_actual = base64.b64decode(data['content']).decode('utf-8')
         sha = data['sha']
-        # Evitar duplicados simples
         if nuevo_enlace.strip() in contenido_actual:
             return "duplicado"
         nuevo_contenido = contenido_actual.strip() + f"\n{nuevo_enlace}"
@@ -47,32 +42,35 @@ def actualizar_listas_en_github(nuevo_enlace):
         nuevo_contenido = nuevo_enlace
         sha = None
 
-    # 2. Subir el cambio
     payload = {
         "message": "Update listas.txt via Streamlit",
         "content": base64.b64encode(nuevo_contenido.encode('utf-8')).decode('utf-8'),
         "sha": sha if sha else ""
     }
-    
     res = requests.put(url, headers=headers, json=payload)
-    return res.status_code == 200 or res.status_code == 201
+    return res.status_code in [200, 201]
 
 def disparar_sync_github():
-    """Llama a GitHub Actions para ejecutar el script sync_playlist.py inmediatamente"""
+    """Ejecuta el Workflow de GitHub Actions"""
     url = f"https://api.github.com/repos/{REPO_NAME}/actions/workflows/update.yml/dispatches"
-    headers = {
-        "Authorization": f"token {GITHUB_TOKEN}",
-        "Accept": "application/vnd.github.v3+json"
-    }
-    # Se dispara sobre la rama main
-    data = {"ref": "main"}
-    
-    res = requests.post(url, headers=headers, json=data)
-    # 204 No Content es el éxito para esta API
+    headers = {"Authorization": f"token {GITHUB_TOKEN}", "Accept": "application/vnd.github.v3+json"}
+    res = requests.post(url, headers=headers, json={"ref": "main"})
     return res.status_code == 204
 
-# --- INTERFAZ DE USUARIO ---
+def obtener_estado_github():
+    """Consulta el estado del último proceso en GitHub"""
+    url = f"https://api.github.com/repos/{REPO_NAME}/actions/runs?per_page=1"
+    headers = {"Authorization": f"token {GITHUB_TOKEN}", "Accept": "application/vnd.github.v3+json"}
+    try:
+        r = requests.get(url, headers=headers)
+        if r.status_code == 200:
+            run = r.json()["workflow_runs"][0]
+            return run["status"], run["conclusion"]
+    except:
+        pass
+    return None, None
 
+# --- INTERFAZ ---
 st.title("🎵 Panel de Control - Playlist API")
 st.markdown("---")
 
@@ -80,31 +78,48 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("➕ Agregar Nueva Playlist")
-    enlace = st.text_input("Pega el link de YouTube aquí:", placeholder="https://www.youtube.com/playlist?list=...")
+    enlace = st.text_input("Pega el link de YouTube:", placeholder="https://www.youtube.com/playlist?list=...")
 
     if st.button("🚀 Guardar en Repositorio"):
         if "list=" in enlace:
             resultado = actualizar_listas_en_github(enlace)
             if resultado == True:
-                st.success("✅ ¡Enlace guardado! listas.txt ha sido actualizado.")
+                st.success("✅ ¡Enlace guardado!")
                 st.balloons()
             elif resultado == "duplicado":
-                st.warning("⚠️ Este enlace ya existe en tu archivo.")
+                st.warning("⚠️ Ya existe este enlace.")
             else:
-                st.error("❌ Error al subir a GitHub. Revisa tus permisos.")
+                st.error("❌ Error de permisos en GitHub.")
         else:
-            st.error("❌ El enlace no parece ser una Playlist válida.")
+            st.error("❌ Enlace no válido.")
 
 with col2:
-    st.subheader("⚙️ Acciones de Sistema")
-    st.write("Usa este botón para procesar los nombres de las canciones ahora mismo sin esperar al horario automático.")
+    st.subheader("⚙️ Estado del Sistema")
     
     if st.button("🔄 Sincronizar Canciones Ahora"):
-        with st.spinner("Despertando a GitHub Actions..."):
-            if disparar_sync_github():
-                st.info("🚀 ¡Proceso de sincronización iniciado! Revisa la pestaña 'Actions' en GitHub. Los archivos .txt se actualizarán en breve.")
-            else:
-                st.error("❌ No se pudo iniciar el proceso. Verifica que 'workflow_dispatch' esté en tu YAML y que el Token sea correcto.")
+        if disparar_sync_github():
+            st.toast("Petición enviada...")
+            time.sleep(1) # Tiempo para que GitHub registre el inicio
+            st.rerun()
+    
+    st.write("---")
+    
+    # Monitor de Estado en Tiempo Real
+    status, conclusion = obtener_estado_github()
+    
+    if status in ["in_progress", "queued", "requested"]:
+        st.warning("⏳ GitHub está trabajando... actualizando tus archivos .txt")
+        if st.button("Actualizar Vista"):
+            st.rerun()
+    elif status == "completed":
+        if conclusion == "success":
+            st.success("✅ Todo listo: Archivos actualizados correctamente.")
+        else:
+            st.error(f"❌ La última sincronización falló ({conclusion}).")
+    else:
+        st.info("Sin procesos recientes detectados.")
+
+    st.caption(f"Último estado: {status} | Resultado: {conclusion}")
 
 st.markdown("---")
-st.caption("Sistema de gestión automatizado para Narciso Andres Pozo Marroquin - 2026")
+st.caption("Administración de Sistemas de Auditoría y Regularización Exprés - Narciso Pozo 2026")
