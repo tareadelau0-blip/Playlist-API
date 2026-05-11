@@ -1,81 +1,101 @@
 01. Feid - LUNA (Visualizer)
 02. Por Amar A Ciegas
 03. Ganas De Ti
-04. Arcángel - Hace Mucho Tiempo
-05. Fashion Girl
-06. Hace Mucho Tiempo
-07. Aparentemente
-08. Quizas (Remix)
-09. Y, ¿Si fuera ella?
-10. Dígale
-11. José José - La Nave del Olvido
-12. Alex Ubago - Me muero por conocerte
-13. Adolescent's Orquesta - Virgen
-14. La Pregunta
-15. Plan B - Es Un Secreto
-16. Sensación Del Bloque
-17. Pose
-18. El Teléfono
-19. Down
-20. Permítame
-21. Igual Que Ayer
-22. My Space
-23. Virtual Diva
-24. Fuera Del Planeta (Remix)
-25. Porque Me Tratas Así?
-26. R.Kelly Feat. Wysin And Yandel - Burn It Up (Radio Galaxy) (zvukoff.ru)
-27. Mirame
-28. Wisin & Yandel - Besos Mojados (Visualizer)
-29. Vampiresa
-30. José José - Preso
-31. José José - El Triste
-32. Me Tengo Que Ir
-33. Frankie Ruíz - Tú Con Él
-34. Nathy Peluso - VIVIR ASÍ ES MORIR DE AMOR
-35. Llegamos A La Disco
-36. KAROL G - Ivonny Bonita
-37. Bobby Pulido - Desvelado
-38. Rawayana - dame un break
-39. Vale la pena - Juan Luis Guerra // Letra
-40. Amores Como el Nuestro
-41. Belinda - Ángel
-42. Paulina Rubio — Ni Una Sola Palabra
-43. Luz Sin Gravedad
-44. Ha*Ash — Impermeable
-45. Camila — Bésame
-46. Víveme
-47. Ha-Ash - Estés en donde estés letra
-48. Ha*Ash — ¿De Dónde Sacas Eso?
-49. HA-ASH - Lo Aprendí de Ti
-50. 💌 Reik - Inolvidable
-51. Wisin & Yandel - Me Estás Tentando
-52. Wisin & Yandel - Aprovechalo (Visualizer)
-53. Salgo Pa' la Calle
-54. khriz y angel - juguete
-55. Plan B - Si no le contesto ft. Tony Dize and Zion y Lennox (Remix)
-56. Alexis & Fido - Ojos Que No Ven
-57. Tu Príncipe
-58. Rakata
-59. Me Matas
-60. Ven Bailalo - Reggaeton Mix
-61. Alexis & Fido - 5 Letras
-62. Me Pones en Tension
-63. Daddy Yankee - Gangsta Zone ft. Snoop Dogg
-64. Pam Pam
-65. Bailando Provocas
-66. Vamos Hacerlo
-67. Al Desnudo
-68. Qué tengo que hacer. Daddy Yankee
-69. Luis Miguel - Sabor A Mi
-70. La Media Vuelta
-71. Luis Miguel - Tengo Todo Excepto A Ti
-72. No Me Platiques Más
-73. Chris Grey - Let The World Burn
-74. Sacala
-75. Maluma - La Temperatura ft. Eli Palacios
-76. Rompe la Cintura
-77. LAGOS & Danny Ocean - Mónaco
-78. Don Omar — Salió El Sol
-79. Don Omar - Dale Don Dale (Visualizer)
-80. Wisin y Yandel - Algo Me Gusta De Ti (ft. Chris Brown & T Pain)
-81. ¿Por Que Te Demoras?
+04. Fashion Girl
+05. Hace Mucho Tiempo
+06. Aparentemente
+07. Quizas (Remix)
+08. Y, ¿Si fuera ella?
+09. Dígale
+10. José José - La Nave del Olvido
+11. Adolescent's Orquesta - Virgen
+12. La Pregunta
+13. Sensación Del Bloque
+14. Pose
+15. El Teléfono
+16. Down
+17. Permítame
+18. Igual Que Ayer
+19. My Space
+20. Virtual Diva
+21. Fuera Del Planeta (Remix)
+22. Porque Me Tratas Así?
+23. R.Kelly Feat. Wysin And Yandel - Burn It Up (Radio Galaxy) (zvukoff.ru)
+24. Mirame
+25. Wisin & Yandel - Besos Mojados (Visualizer)
+26. Vampiresa
+27. José José - Preso
+28. José José - El Triste
+29. Me Tengo Que Ir
+30. Frankie Ruíz - Tú Con Él
+31. Nathy Peluso - VIVIR ASÍ ES MORIR DE AMOR
+32. Llegamos A La Disco
+33. KAROL G - Ivonny Bonita
+34. Bobby Pulido - Desvelado
+35. Rawayana - dame un break
+36. Amores Como el Nuestro
+37. Belinda - Ángel
+38. Paulina Rubio — Ni Una Sola Palabra
+39. Luz Sin Gravedad
+40. Ha*Ash — Impermeable
+41. Camila — Bésame
+42. Víveme
+43. Ha-Ash - Estés en donde estés letra
+44. 💌 Reik - Inolvidable
+45. Wisin & Yandel - Aprovechalo (Visualizer)
+46. Salgo Pa' la Calle
+47. khriz y angel - juguete
+48. Tu Príncipe
+49. Rakata
+50. Me Matas
+51. Ven Bailalo - Reggaeton Mix
+52. Alexis & Fido - 5 Letras
+53. Me Pones en Tension
+54. Pam Pam
+55. Bailando Provocas
+56. Vamos Hacerlo
+57. Al Desnudo
+58. Qué tengo que hacer. Daddy Yankee
+59. Luis Miguel - Sabor A Mi
+60. La Media Vuelta
+61. Luis Miguel - Tengo Todo Excepto A Ti
+62. No Me Platiques Más
+63. Maluma - La Temperatura ft. Eli Palacios
+64. Rompe la Cintura
+65. LAGOS & Danny Ocean - Mónaco
+66. Don Omar — Salió El Sol
+67. Don Omar - Dale Don Dale (Visualizer)
+68. Wisin y Yandel - Algo Me Gusta De Ti (ft. Chris Brown & T Pain)
+69. ¿Por Que Te Demoras?
+70. Alex Ubago - Me muero por conocerte
+71. Es un secreto - Plan B // Letra
+72. Lalo Rodríguez - Ven Devórame Otra Vez
+73. Juan Luis Guerra 4.40 - Vale la Pena
+74. me estas tentando - wisin y yandel letra
+75. Plan B — Si No Le Contesto
+76. Alexis & Fido - Ojos Que No Ven
+77. Gangsta Zone
+78. Sacala
+79. Flow Natural
+80. Yo No So Tu Marido
+81. Quiero Saber
+82. Siente El Boom
+83. Perros Salvajes - Daddy Yankee
+84. Nicky Jam ft Daddy Yankee - combi completa con letra
+85. Trebol Clan - Agarrala Pegala Azotala (Original)
+86. Don Omar - Ojitos Chiquitos
+87. Bad Bunny - EoO
+88. virtual diva - don omar ; letra
+89. Wisin & Yandel - Te Siento // Letra
+90. Gocho, Jowell - Dandole | Mi Música
+91. Fuego - Una Vaina Loca
+92. Young Cister - QLOO* ft. Kreamly
+93. J Balvin - Safari ft. Pharrell Williams, BIA, Sky
+94. Daddy Yankee; Ven Conmigo ft. Prince Royce
+95. Daddy Yankee- La nueva y la ex. Letra.
+96. Daddy Yankee - Sígueme y Te Sigo
+97. Mon Laferte - Caderas Blancas
+98. Sin Bandera — Que Lloro
+99. Pablo Alborán - Pasos de cero
+100. Pablo Alborán feat. Jesse & Joy - Dónde está el amor | CantoYo
+101. Kumbia Kings Ft. Intocable - Fuiste Mala // Letra
