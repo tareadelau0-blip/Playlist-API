@@ -18,93 +18,106 @@
 18. São Paulo
 19. The Weeknd - After Hours
 20. Die For You
-21. The Weeknd - Call Out My Name
-22. The Weeknd - Earned It (Fifty Shades Of Grey)
-23. Swedish House Mafia and The Weeknd - Moth To A Flame
-24. Stromae & Pomme - Ma Meilleure Ennemie // (From Arcane Season 2)
-25. Metro Boomin, The Weeknd, 21 Savage - Creepin
-26. Aaron Smith - Dancin (KRONO Remix) (Español)
-27. Still With You
-28. Lauv - Who (feat. BTS)
-29. Pied Piper
-30. Too Good to Say Goodbye
-31. Seoul City
-32. Shouldn't Be
-33. what can i do?
-34. Never Tell
-35. Chris Brown - Under The Influence
-36. Call Out My Name
-37. Breakin' Dishes
-38. Rixton - Me and My Broken Heart
-39. Youngblood • 5 Seconds of summer | Letra en español / inglés
-40. Shawn Mendes - Stitches
-41. Break Your Heart:Taio Cruz Lyrics
-42. Usher - DJ Got Us Fallin' In Love ft. Pitbull
-43. Marshmello & Anne-Marie - FRIENDS *OFFICIAL FRIENDZONE ANTHEM*
-44. Five - If Ya Gettin' Down
-45. ROSÉ - stay a little longer
-46. ROSÉ - drinks or coffee
-47. 3am
-48. LISA - BADGRRRL
-49. LISA - Lifestyle
-50. LISA - Chill
-51. Born Again
-52. BLACKPINK - ‘Typa Girl’
-53. SUPER JUNIOR 슈퍼주니어 '미인아 (Bonamana)' MV
-54. EXO 엑소 'Love Shot' MV
-55. EXO 엑소 'Monster' MV
-56. 10 Minutes
-57. miss A “Breathe” M/V
-58. B.I
-59. BLACKPINK - ‘Tally’
-60. Sam Smith - Diamonds
-61. Shawn Mendes - Teach Me How To Love
-62. B.I (비아이) 'Keep me up' Official Audio
-63. Maroon 5 - Maps; Traducida al Español
-64. GOT7 "You Calling My Name
-65. Ed Sheeran - Cross Me (feat. Chance The Rapper & PnB Rock)
-66. Tobii - Bad Girls Like You
-67. NO NA - SUPERSTITIOUS
-68. NO NA - SHOOT
-69. Lose My Mind (feat. Doja Cat)
-70. Doja Cat - Jealous Type
-71. jackson wang - ❛lmly (leave me loving you)❜ | sub español
-72. Damiano David - Tangerine
-73. Damiano David - Cinnamon
-74. Maejor Ali - Lolly ft. Juicy J, Justin Bieber
-75. Years & Years - King
-76. Justin Bieber & BloodPop® - Friends
-77. Closer
-78. John Newman - Love Me Again
-79. Kygo - Firestone ft. Conrad Sewell
-80. Beauty And A Beat
-81. Love You Like A Love Song
-82. BIBI(비비) - "She Got It (쉬가릿) (cigarette and condom)"
-83. Ed Sheeran - Azizam
-84. Ed Sheeran - Bad Habits
-85. ONE OK ROCK - The Beginning Lyrics
-86. ONE OK ROCK - Cry out
-87. ONE OK ROCK - Clock Strikes
-88. One Ok Rock - Heartache (Ost. Rurouni Kenshin : The Legend End) Video Lyric
-89. Rihanna - Don't Stop The Music
-90. Shawn Mendes & Zedd - Lost In Japan
-91. SunKissed Lola - Pasilyo
-92. ZAYN - PILLOWTALK
-93. Fall Out Boy - Beat It ft. John Mayer
-94. Fall Out Boy - Immortals (Big Hero 6) | Lyrics/sub español |
-95. 5 Seconds Of Summer - Youngblood 5SOS
-96. 5 Seconds of Summer - Teeth
-97. 5 Seconds Of Summer - Easier 5SOS
-98. Love Me Harder
-99. Maroon 5 - Cold ft. Future
-100. Prayer in C Lilly Wood The Prick Subtitulado en Español
-101. Jonas Blue - Mama ft. William Singe
-102. Christina Aguilera - Genie In A Bottle
-103. Chris Grey - Let The World Burn
-104. Bruno Mars - Locked Out Of Heaven
-105. Doja Cat - Streets
-106. ZAYN & Sia - Dusk Till Dawn
-107. Bad Angel
-108. LISA - FXCK UP THE WORLD
-109. JACKSON WANG// 100 WAYS
-110. ENHYPEN - Bite Me
+21. The Weeknd - Earned It (Fifty Shades Of Grey)
+22. Swedish House Mafia and The Weeknd - Moth To A Flame
+23. Stromae & Pomme - Ma Meilleure Ennemie // (From Arcane Season 2)
+24. Metro Boomin, The Weeknd, 21 Savage - Creepin
+25. Aaron Smith - Dancin (KRONO Remix) (Español)
+26. Still With You
+27. Lauv - Who (feat. BTS)
+28. Pied Piper
+29. Too Good to Say Goodbye
+30. Seoul City
+31. Shouldn't Be
+32. what can i do?
+33. Never Tell
+34. Chris Brown - Under The Influence
+35. Call Out My Name
+36. Breakin' Dishes
+37. Rixton - Me and My Broken Heart
+38. Youngblood • 5 Seconds of summer | Letra en español / inglés
+39. Shawn Mendes - Stitches
+40. Break Your Heart:Taio Cruz Lyrics
+41. Usher - DJ Got Us Fallin' In Love ft. Pitbull
+42. Marshmello & Anne-Marie - FRIENDS *OFFICIAL FRIENDZONE ANTHEM*
+43. Five - If Ya Gettin' Down
+44. ROSÉ - stay a little longer
+45. ROSÉ - drinks or coffee
+46. 3am
+47. LISA - BADGRRRL
+48. LISA - Lifestyle
+49. LISA - Chill
+50. Born Again
+51. BLACKPINK - ‘Typa Girl’
+52. SUPER JUNIOR 슈퍼주니어 '미인아 (Bonamana)' MV
+53. EXO 엑소 'Love Shot' MV
+54. EXO 엑소 'Monster' MV
+55. 10 Minutes
+56. miss A “Breathe” M/V
+57. B.I
+58. BLACKPINK - ‘Tally’
+59. Sam Smith - Diamonds
+60. Shawn Mendes - Teach Me How To Love
+61. B.I (비아이) 'Keep me up' Official Audio
+62. Maroon 5 - Maps; Traducida al Español
+63. GOT7 "You Calling My Name
+64. Ed Sheeran - Cross Me (feat. Chance The Rapper & PnB Rock)
+65. Tobii - Bad Girls Like You
+66. NO NA - SUPERSTITIOUS
+67. NO NA - SHOOT
+68. Lose My Mind (feat. Doja Cat)
+69. Doja Cat - Jealous Type
+70. jackson wang - ❛lmly (leave me loving you)❜ | sub español
+71. Damiano David - Tangerine
+72. Damiano David - Cinnamon
+73. Maejor Ali - Lolly ft. Juicy J, Justin Bieber
+74. Years & Years - King
+75. Justin Bieber & BloodPop® - Friends
+76. Closer
+77. John Newman - Love Me Again
+78. Kygo - Firestone ft. Conrad Sewell
+79. Beauty And A Beat
+80. Love You Like A Love Song
+81. BIBI(비비) - "She Got It (쉬가릿) (cigarette and condom)"
+82. Ed Sheeran - Azizam
+83. Ed Sheeran - Bad Habits
+84. ONE OK ROCK - The Beginning Lyrics
+85. ONE OK ROCK - Cry out
+86. ONE OK ROCK - Clock Strikes
+87. One Ok Rock - Heartache (Ost. Rurouni Kenshin : The Legend End) Video Lyric
+88. Rihanna - Don't Stop The Music
+89. Shawn Mendes & Zedd - Lost In Japan
+90. SunKissed Lola - Pasilyo
+91. ZAYN - PILLOWTALK
+92. Fall Out Boy - Beat It ft. John Mayer
+93. Fall Out Boy - Immortals (Big Hero 6) | Lyrics/sub español |
+94. 5 Seconds of Summer - Teeth
+95. 5 Seconds Of Summer - Easier 5SOS
+96. Love Me Harder
+97. Maroon 5 - Cold ft. Future
+98. Prayer in C Lilly Wood The Prick Subtitulado en Español
+99. Jonas Blue - Mama ft. William Singe
+100. Christina Aguilera - Genie In A Bottle
+101. Chris Grey - Let The World Burn
+102. Bruno Mars - Locked Out Of Heaven
+103. Doja Cat - Streets
+104. ZAYN & Sia - Dusk Till Dawn
+105. Bad Angel
+106. LISA - FXCK UP THE WORLD
+107. JACKSON WANG// 100 WAYS
+108. ENHYPEN - Bite Me
+109. 「 one ok rock - wherever you are ✧ sub español 」
+110. BIBI - KAZINO (Sub. Español)
+111. Sam smith, calvin harris - promises- letra español
+112. Kim - Confidence "Je le sens c’est lui l’homme de ma vie"
+113. Trinidad Cardona - Love Me Back
+114. Doja Cat - Agora Hills
+115. KARD - BOMB BOMB
+116. {VOSTFR} Jay Park
+117. Justin Bieber - Intentions ft. Quavo
+118. Charlie Puth - We Don't Talk Anymore feat. Selena Gomez
+119. DJ Snake ft. Justin Bieber - Let Me Love You
+120. Justin Bieber - Never Say Never ft. Jaden
+121. Britney Spears - Baby One More Time
+122. Britney Spears - Oops!... I Did It Again
+123. Britney Spears - Oops!...I Did It Again
